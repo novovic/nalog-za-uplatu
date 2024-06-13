@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nalog za Uplatu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+    input, textarea {
+      font-size: 12px;
+    }
+    .container {
+      margin-top: 20px;
+      width: 680px;
+      border: 1px solid #000;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .columns {
+      display: flex;
+      justify-content: space-between;
+    }
+    .left, .right {
+      flex: 1;
+    }
+    .left {
+      padding-right: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .left::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 80%;
+      width: 1px;
+      background-color: #000;
+    }
+    .right {
+      padding-left: 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group {
+      margin-bottom: 2px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 2px;
+      font-weight: bold;
+      font-size: 10px;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 2px;
+      box-sizing: border-box;
+    }
+    .form-group textarea {
+      resize: none;
+    }
+    .form-group small {
+      display: block;
+      margin-top: 5px;
+    }
+    .right .form-group {
+      margin-bottom: 8px;
+    }
+    .title {
+      text-align: right;
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    .sifra-iznos {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: end;
+    }
+    .potpis-datum {
+      margin-bottom: auto;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    .pp, .mdp, .dv {
+      font-size: 10px;
+      border-top: 1px solid #000;
+      padding-top: 2px;
+      width: 45%;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .mdp {
+      margin-top: 2px;
+      margin-left: auto;
+    }
+    .dv {
+      margin-top: auto;
+    }
+    .sifra-placanja {
+      flex: 1;
+    }
+    .valuta {
+      flex: 1;
+    }
+    .iznos {
+      flex: 3;
+    }
+    .model-poziv {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: end;
+    }
+    .broj-modela {
+      flex: 1;
+    }
+    .poziv {
+      flex: 4;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">НАЛОГ ЗА УПЛАТУ</div>
+    <div class="columns">
+      <div class="left">
+        <div class="form-group">
+          <label for="uplatilac">уплатилац</label>
+          <textarea id="uplatilac" name="uplatilac" rows="3" disabled>име, презиме и адреса уплатиоца</textarea>
+        </div>
+        <div class="form-group">
+          <label for="svrha">сврха уплате</label>
+          <textarea id="svrha" name="svrha" rows="3" disabled>уплата по налогу грађана</textarea>
+        </div>
+        <div class="form-group">
+          <label for="primalac">прималац</label>
+          <textarea id="primalac" name="primalac" rows="3" disabled>назив примаоца
+адреса и место</textarea>
+        </div>
+        <div class="pp">
+          печат и потпис уплатиоца
+        </div>
+        <div class="mdp">
+          место и датум пријема
+        </div>
+      </div>
+      <div class="right">
+        <div class="sifra-iznos">
+          <div class="form-group sifra-placanja">
+            <label for="sifra">шифра<br>плаћања</label>
+            <input type="text" id="sifra" name="sifra" value="289" disabled>
+          </div>
+          <div class="form-group valuta">
+            <label for="valuta">валута</label>
+            <input type="text" id="valuta" name="valuta" value="RSD" disabled>
+          </div>
+          <div class="form-group iznos">
+            <label for="iznos">износ</label>
+            <input type="text" id="iznos" name="iznos" value="= 1.000,00" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="racun">рачун примаоца</label>
+          <input type="text" id="racun" name="racun" value="000-0000000000000-00" disabled>
+        </div>
+        <div class="model-poziv">
+          <div class="form-group broj-modela">
+            <label for="broj-modela">модел</label>
+            <input type="text" id="broj-modela" name="broj-modela" value="00" disabled>
+          </div>
+          <div class="form-group poziv">
+            <label for="poziv-na-broj">позив на број (одобрење)</label>
+            <input type="text" id="poziv-na-број" name="poziv-na-број" value="000000" disabled>
+          </div>
+        </div>
+        <div class="dv">
+          датум валуте
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
